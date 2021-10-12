@@ -24,11 +24,13 @@ h2{
 
 nav ul{
   list-style-type: none;
+
 }
 
 nav li{
   display: inline;
   padding-right: 20px;
+
 }
 
 nav{
@@ -60,10 +62,13 @@ nav a{
   color: black;
   font-weight: bold;
   /* Requirement 1 code here*/
+  text-decoration: none;
 }
 
   /* Requirement 2 code here*/
-
+nav a:hover {
+    text-decoration: underline;
+  }
 
 
 .skip a{
@@ -75,18 +80,30 @@ nav a{
   z-index: 1;
 
   /* Requirement 3a code here*/
-  
+  position: absolute;
+  top: -40px;
 }
 
 /* Requirement 3b code here*/
-
+.skip a:focus {
+  position: absolute;
+  top: 0px;
+}
 
 /* Requirement 4 code here*/
-
+*:focus{
+  border: solid 2px;
+  
+}
 
 
 .container{
   /* Requirement 5 code here*/
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  grid-template-rows: auto auto auto auto auto;
+  grid-row-gap: 15px;
+
 
 }
 
@@ -100,25 +117,60 @@ header{
   height: 400px; /* Parallax effect */
 
   /* YOUR CODE HERE; */
+  grid-column: 1 / span 3;
+  background-image: url("../images/header.jpg");
 }
 
 
 
 .about-image{
-  
+  grid-column: 1 / span 3;
+  max-height: 700px;
+  overflow: hidden;
+  grid-row-start: 2;
 }
 
 .about{
- 
+ grid-column: 2 / span 1;
+ grid-row-start: 2;
 }
 
 .method-image{
- 
+  grid-column: 1 / span 3;
+  max-height: 700px;
+  overflow: hidden;
+  grid-row-start: 3;
 }
 
 .method{
-  
+  grid-column: 2 / span 1;
+  grid-row-start: 3;
 }
+
+.clients-image{
+  grid-column: 1 / span 3;
+  max-height: 700px;
+  overflow: hidden;
+  grid-row-start: 4;
+}
+
+.clients{
+  grid-column: 2 / span 1;
+  grid-row-start: 4;
+}
+
+.contact-image{
+  grid-column: 1 / span 3;
+  max-height: 700px;
+  overflow: hidden;
+  grid-row-start: 5;
+}
+
+.contact{
+  grid-column: 2 / span 1;
+  grid-row-start: 5;
+}
+
 
 /* You need to write some of your own selectors here */
 
@@ -128,6 +180,7 @@ header{
   background-color: rgba(255, 255, 255, .8);
   border: 10px solid black;
   padding: 30px;
+  align-self: center;
 
   /* Your code here */
 
@@ -136,45 +189,55 @@ header{
 @media screen and (min-width: 800px){
   nav{
     padding: 30px 0;
-
+    text-align: right;
     /* Your code here */
   }
 
   .container{
-   
+    grid-template-columns: 50px, auto, 500px, auto, 50px;
+    grid-template-rows: 400px, 400px, 400px, 400px, 400px;
   }
 
   
 
   .about-image{
+    grid-column: 1 / span 2;
+
   
   }
 
   .about{
-    
+    grid-column: 2 / span 2;
+
   }
 
   .method-image{
+    grid-column: 2 / span 2;
     
   }
 
   .method{
+    grid-column: 1 / span 2;
    
   }
 
   .clients-image{
-    
+    grid-column: 1 / span 2;
+
   }
 
   .clients{
+    grid-column: 2 / span 2;
     
   }
 
   .contact-image{
+    grid-column: 2 / span 2;
     
   }
 
   .contact{
+    grid-column: 1 / span 2;
     
   }
 
